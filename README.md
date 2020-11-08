@@ -1,3 +1,3 @@
 # Address-Book-JS
 
-Modified to UC 1 - Create Contact Class with first and last names, address, city, state, zip, phone number and email
+Modified to UC 2 - Ability to ensure Valid Contacts are added Using REGEX
