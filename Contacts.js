@@ -78,3 +78,13 @@ record.push(new Contacts("Ravi", "Kumar", "JLN Marg", "Sampak",
 "MP", 230056, "9648515621", "rkboi@yahoo.com"));
 
 process.stdout.write(record.toString);
+
+//UC 4
+function editContactAddress(firstName,lastName,newAddress){
+    for (contact in record){
+        if (contact.firstName==firstName && contact.lastName==lastName) contact.address=newAddress;
+    }
+}
+
+editContactAddress("Tanmay","Jain","Malviya Nagar");
+process.stdout.write(record.toString);

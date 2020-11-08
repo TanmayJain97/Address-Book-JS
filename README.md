@@ -1,3 +1,3 @@
 # Address-Book-JS
 
-Modified to UC 3 - Ability to create a New AddressBook array and add new Contacts to it
+Modified to UC 4 - Ability to find existing contact person using their name and edit it
