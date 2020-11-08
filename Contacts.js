@@ -63,33 +63,18 @@ class Contacts{
 //Create an obj
 let contact = new Contacts("Narendra","Modi","PMOffice","NewDelhi","Delhi",114102,
                                     "9765422564","pmo@office.com");
-process.stdout.write(contact.toString()+"\n");
 
-/* let contact2 = new Contacts("Na","Modi","PMOffice","New Delhi","Delhi",114102,
-                                    "9765422564","pmo@office.com");
-process.stdout.write(contact2.toString());
- */
+//Pushing into array
+let record=new Array()
+record.push(contact);
 
-/* let contact2 = new Contacts("Narendra","Md","PMOffice","New Delhi","Delhi",114102,
-                                    "9765422564","pmo@office.com");
-process.stdout.write(contact2.toString());
- */
+record.push(new Contacts("Tanmay", "Jain", "Mahaveer Nagar", "Jaipur",
+"Raj", 302011, "9765485884", "mail.tanmay@gmail.com"));
 
-/* let contact2 = new Contacts("Narendra","Modi","PMO","New Delhi","Delhi",114102,
-                                    "9765422564","pmo@office.com");
-process.stdout.write(contact2.toString());
-*/
+record.push(new Contacts("Donal", "Trump", "White House", "Washington",
+"Washington DC", 100001, "9999999999", "pm@gmai.com"));
 
-/* let contact2 = new Contacts("Narendra","Modi","PMOffice","ND","Delhi",114102,
-                                    "9765422564","pmo@office.com");
-process.stdout.write(contact2.toString());
-*/
+record.push(new Contacts("Ravi", "Kumar", "JLN Marg", "Sampak",
+"MP", 230056, "9648515621", "rkboi@yahoo.com"));
 
-/* let contact2 = new Contacts("Narendra","Modi","PMOffice","New Delhi","Dh",114102,
-                                    "9765422564","pmo@office.com");
-process.stdout.write(contact2.toString());
- */
-
-let contact2 = new Contacts("Narendra","Modi","PMOffice","New Delhi","Delhi",114102,
-                                    "22","pmo@office.com");
-process.stdout.write(contact2.toString());
+process.stdout.write(record.toString);
