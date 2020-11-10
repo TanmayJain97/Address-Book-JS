@@ -34,7 +34,7 @@ class Contacts{
         else throw new ValidationError("Invalid Last Name: "+params[1]);
 
         //Checking for Duplicates
-        if(this.checkDuplicacy) throw new ValidationError("Record already exists.");
+        //if(this.checkDuplicacy) throw new ValidationError("Record already exists.");
 
         if(addressRegex.test(params[2])) this.address = params[2];
         else throw new ValidationError("Invalid Address: "+params[2]);
@@ -121,5 +121,20 @@ function getCount(){
 getCount();
 
 //UC 7
-record.push(new Contacts("Tanmay", "Jain", "Mahaveer Nagar", "Jaipur",
+/* record.push(new Contacts("Tanmay", "Jain", "Mahaveer Nagar", "Jaipur",
 "Rajasthan", 302011, "9765485884", "mail.tanmay@gmail.com"));
+ */
+
+//UC 8
+function searchContactOnCityState(firstName,city,state){
+    let citySearch=record.find(contact=>contact.firstName==firstName&&contact.city==city);
+    let stateSearch=record.find(contact=>contact.firstName==firstName&&contact.state==state);
+    if (citySearch==undefined){
+        if (stateSearch==undefined){
+            console.log(firstName+" does not exist.");
+        }else {console.log(contact);}
+    }else {console.log(contact);}
+}
+searchContactOnCityState("Tanmay","Jaipur","");
+searchContactOnCityState("Tanmay","","Rajasthan");
+searchContactOnCityState("Tanmay","Jaipur","Rajasthan");
