@@ -1,10 +1,10 @@
 let firstNameRegex = RegExp("^[A-Z]{1}[A-Za-z]{2,}$");
-let lastNameRegex = RegExp("^[A-Z]{1}[A-Za-z]{3,}$");
+let lastNameRegex = firstNameRegex;
 let addressRegex = RegExp("^.{4,}$");
 let cityRegex = RegExp("^[a-zA-Z]{4,}$");
 let stateRegex = RegExp("^[a-zA-Z\\s]{4,}$");
 let zipCodeRegex = RegExp("^[1-9]{1}[0-9]{2}[\\s]?[0-9]{3}$");
-let phoneRegex = RegExp("^[0-9]{1,}[ ][1-9]{1}[0-9]{9}$");
+let phoneRegex = RegExp("^[0-9]{1,}$");
 let emailRegex = RegExp("^[a-zA-Z0-9+_-]+([.][a-zA-Z0-9]+)*@([a-zA-Z0-9]+)([.][a-z]+)?[.][a-z]{2,}$");
 
 class ValidationError extends Error {
@@ -69,22 +69,32 @@ let record=new Array()
 record.push(contact);
 
 record.push(new Contacts("Tanmay", "Jain", "Mahaveer Nagar", "Jaipur",
-"Raj", 302011, "9765485884", "mail.tanmay@gmail.com"));
+"Rajasthan", 302011, "9765485884", "mail.tanmay@gmail.com"));
 
 record.push(new Contacts("Donal", "Trump", "White House", "Washington",
 "Washington DC", 100001, "9999999999", "pm@gmai.com"));
 
 record.push(new Contacts("Ravi", "Kumar", "JLN Marg", "Sampak",
-"MP", 230056, "9648515621", "rkboi@yahoo.com"));
+"Madhya Pradesh", 230056, "9648515621", "rkboi@yahoo.com"));
 
-process.stdout.write(record.toString);
+console.log(record);
 
 //UC 4
-function editContactAddress(firstName,lastName,newAddress){
+function searchContactAddress(firstName,lastName,newAddress){
     for (contact in record){
         if (contact.firstName==firstName && contact.lastName==lastName) contact.address=newAddress;
+        console.log(contact);
     }
 }
 
-editContactAddress("Tanmay","Jain","Malviya Nagar");
-process.stdout.write(record.toString);
+searchContactAddress("Tanmay","Jain","Malviya Nagar");
+
+//UC 5
+function deleteContact(firstName,lastName){
+    for(let i=0;i<record.length;i++){
+        if(record[i].firstName==firstName &&record[i].lastName==lastName) delete record[i];
+    }
+}
+
+deleteContact("Narendra","Modi");
+console.log(record);
