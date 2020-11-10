@@ -98,3 +98,13 @@ function deleteContact(firstName,lastName){
 
 deleteContact("Narendra","Modi");
 console.log(record);
+
+//UC 6
+function count(contactCount){
+    return ++contactCount;
+}
+
+function getCount(){
+    console.log("Contact Count: "+record.reduce(count,0)+"\n");
+}
+getCount();
