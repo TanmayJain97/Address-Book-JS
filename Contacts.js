@@ -161,3 +161,15 @@ function getCountByCityState(cityOrState){
 }
 console.log("Count in Jaipur: "+getCountByCityState("Jaipur"));
 console.log("Count in Madhya Pradesh: "+getCountByCityState("Madhya Pradesh"));
+
+//UC11
+function sortContactsByName(){
+    record.sort((contact1,contact2) => {
+        if (contact1.firstName>contact2.firstName) return 1;
+        else if (contact1.firstName<contact2.firstName) return -1;
+        return 0;
+    });
+ }
+ sortContactsByName();
+ console.log("The sorted Address Book is: ");
+ console.log(record);

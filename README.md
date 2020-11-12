@@ -1,3 +1,3 @@
 # Address-Book-JS
 
-Modified to UC 10 - Ability to get number of contact persons in a city or state
+Modified to UC 11 - Ability to sort the entries in the address book alphabetically by Contact name
