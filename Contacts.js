@@ -127,8 +127,8 @@ getCount();
 
 //UC 8
 function searchContactOnCityState(firstName,city,state){
-    let citySearch=record.find(contact=>contact.firstName==firstName&&contact.city==city);
-    let stateSearch=record.find(contact=>contact.firstName==firstName&&contact.state==state);
+    let citySearch=record.filter(contact=>contact.firstName==firstName&&contact.city==city);
+    let stateSearch=record.filter(contact=>contact.firstName==firstName&&contact.state==state);
     if (citySearch==undefined){
         if (stateSearch==undefined){
             console.log(firstName+" does not exist.");
@@ -147,5 +147,17 @@ function viewByCity(city){
 function viewByState(state){
     record.filter(contact=>contact.state==state).forEach(contact=>console.log(contact))
 }
+console.log("Who lives in Jaipur?");
 viewByCity("Jaipur");
+console.log("Who lives in MP?");
 viewByState("Madhya Pradesh");
+
+//UC 10
+function getCountByCityState(cityOrState){
+    let count = 0;
+    record.filter(contact=>contact.city==cityOrState).forEach(contact=>++count);
+    record.filter(contact=>contact.state==cityOrState).forEach(contact=>++count);
+    return count;
+}
+console.log("Count in Jaipur: "+getCountByCityState("Jaipur"));
+console.log("Count in Madhya Pradesh: "+getCountByCityState("Madhya Pradesh"));
