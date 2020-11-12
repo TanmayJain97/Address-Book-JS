@@ -1,3 +1,3 @@
 # Address-Book-JS
 
-Modified to UC 8 - Ability to search contact in a particular City or State
+Modified to UC 9 - Ability to view Contact by City or State

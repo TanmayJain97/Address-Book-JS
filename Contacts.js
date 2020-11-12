@@ -138,3 +138,14 @@ function searchContactOnCityState(firstName,city,state){
 searchContactOnCityState("Tanmay","Jaipur","");
 searchContactOnCityState("Tanmay","","Rajasthan");
 searchContactOnCityState("Tanmay","Jaipur","Rajasthan");
+
+//UC9
+function viewByCity(city){
+    record.filter(contact=>contact.city==city).forEach(contact=>console.log(contact))
+}
+
+function viewByState(state){
+    record.filter(contact=>contact.state==state).forEach(contact=>console.log(contact))
+}
+viewByCity("Jaipur");
+viewByState("Madhya Pradesh");
