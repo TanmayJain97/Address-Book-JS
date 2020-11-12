@@ -162,14 +162,47 @@ function getCountByCityState(cityOrState){
 console.log("Count in Jaipur: "+getCountByCityState("Jaipur"));
 console.log("Count in Madhya Pradesh: "+getCountByCityState("Madhya Pradesh"));
 
-//UC11
+//UC 11
 function sortContactsByName(){
-    record.sort((contact1,contact2) => {
-        if (contact1.firstName>contact2.firstName) return 1;
-        else if (contact1.firstName<contact2.firstName) return -1;
-        return 0;
-    });
+    sortContacts("name");
  }
  sortContactsByName();
- console.log("The sorted Address Book is: ");
+ console.log("The sorted Address Book on Name is: ");
  console.log(record);
+
+//UC 12
+function sortContacts(type){
+    switch(type){
+        case "name": record.sort((contact1,contact2) => {
+                        if (contact1.firstName>contact2.firstName) return 1;
+                        else if (contact1.firstName<contact2.firstName) return -1;
+                        return 0;
+                        }); break;
+        case "city": record.sort((contact1,contact2) => {
+                        if (contact1.city>contact2.city) return 1;
+                        else if (contact1.city<contact2.city) return -1;
+                        return 0;
+                        }); break;
+        case "state": record.sort((contact1,contact2) => {
+                        if (contact1.state>contact2.state) return 1;
+                        else if (contact1.state<contact2.state) return -1;
+                        return 0;
+                        }); break;
+        case "zip": record.sort((contact1,contact2) => {
+                            return contact1.zipCode-contact2.zipCode;
+                        }); break;
+        default: console.log("Unsupported type.");
+    }
+}
+
+sortContacts("city");
+console.log("The sorted Address Book on City is: ");
+console.log(record);
+
+sortContacts("state");
+console.log("The sorted Address Book on State is: ");
+console.log(record);
+
+sortContacts("zip");
+console.log("The sorted Address Book on Zip Code is: ");
+console.log(record);

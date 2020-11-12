@@ -1,3 +1,3 @@
 # Address-Book-JS
 
-Modified to UC 11 - Ability to sort the entries in the address book alphabetically by Contact name
+Modified to UC 12 - Ability to sort the contacts in the AddressBook by City, State, or Zip Code
